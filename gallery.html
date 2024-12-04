@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloodhub</title>   
+     <link rel="stylesheet" 
+    href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity=
+"sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+       crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    
+    /* The grid: Four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 10px;
+    }
+    
+    /* Style the images inside the grid */
+    .column img {
+      opacity: 0.8; 
+      cursor: pointer; 
+    }
+    
+    .column img:hover {
+      opacity: 1;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* The expanding image container */
+    .container {
+      position: relative;
+      display: none;
+    }
+    
+    /* Expanding image text */
+    #imgtext {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-size: 20px;
+    }
+    
+    /* Closable button inside the expanded image */
+    .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+    </style>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2 class="logo-heading">Bloodhub </h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items">
+                        <a class="links" href="#home">
+                              Home
+                          </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div style="text-align:center">
+        <h2>Tabbed Image Gallery</h2>
+        <p>Click on the images below:</p>
+      </div>
+      
+      <!-- The four columns -->
+      <div class="row">
+        <div class="column">
+          <img src="bloodhub/Picture1.png" alt="Nature" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="bloodhub/Picture2.png" alt="Snow" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="bloodhub/Picture3.png" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="bloodhub/Picture4.png" alt="Lights" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="bloodhub/Picture5.png" alt="Nature" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture6.png" alt="Snow" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture7.png" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture8.png" alt="Lights" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture9.png" alt="Nature" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture10.png" alt="Snow" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture11.png" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture12.png" alt="Lights" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture13.png" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="bloodhub/Picture14.png" alt="Lights" style="width:100%" onclick="myFunction(this);">
+          </div>
+      </div>
+      
+      <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+      </div>
+      
+      <script>
+      function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+      }
+      </script>
+      
+      </body>
+      </html>
+</body>
+</html>
